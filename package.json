@@ -7,7 +7,7 @@
   "scripts": {
   "start": "node index.js",
   "dev": "nodemon index.js",
-  "postinstall": "cross-env PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer puppeteer install chrome",
+  "postinstall": "puppeteer install chrome",
   "render-build": "npm ci && npm run postinstall"
   },
   "engines": {

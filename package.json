@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
+  "start": "node index.js",
   "dev": "nodemon index.js",
-  "postinstall": "puppeteer browsers install chrome"
+  "postinstall": "puppeteer browsers install chrome",
+  "render-build": "npm ci && npm run postinstall"
   },
   "engines": {
     "node": ">=18"

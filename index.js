@@ -6,6 +6,10 @@
 const express = require("express");
 const puppeteer = require("puppeteer");
 
+// Ensure Puppeteer uses a predictable cache dir if not configured (helps on hosts like Render)
+process.env.PUPPETEER_CACHE_DIR =
+  process.env.PUPPETEER_CACHE_DIR || require("path").join(process.cwd(), ".cache", "puppeteer");
+
 const PORT = process.env.PORT || 3000;
 const app = express();
 

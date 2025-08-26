@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-  "start": "node index.js",
+  "start": "cross-env PUPPETEER_CACHE_DIR=.cache/puppeteer node index.js",
   "dev": "nodemon index.js",
-  "postinstall": "puppeteer browsers install chrome",
+  "postinstall": "cross-env PUPPETEER_CACHE_DIR=.cache/puppeteer puppeteer browsers install chrome",
   "render-build": "npm ci && npm run postinstall"
   },
   "engines": {
@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "express": "^4.19.2",
-    "puppeteer": "^23.7.1"
+  "puppeteer": "^23.7.1",
+  "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"

@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-  "start": "cross-env PUPPETEER_CACHE_DIR=.cache/puppeteer node index.js",
+  "start": "node index.js",
   "dev": "nodemon index.js",
-  "postinstall": "cross-env PUPPETEER_CACHE_DIR=.cache/puppeteer puppeteer browsers install chrome",
+  "postinstall": "cross-env PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer puppeteer install chrome",
   "render-build": "npm ci && npm run postinstall"
   },
   "engines": {

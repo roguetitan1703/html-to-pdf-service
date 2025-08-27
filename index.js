@@ -6,18 +6,7 @@
 const express = require("express");
 const puppeteer = require("puppeteer");
 
-// Ensure Puppeteer uses a predictable absolute cache dir if not configured (helps on hosts like Render)
-(() => {
-  const path = require("path");
-  const fs = require("fs");
-  const defaultCache = path.resolve(process.cwd(), ".cache", "puppeteer");
-  if (!process.env.PUPPETEER_CACHE_DIR) {
-    process.env.PUPPETEER_CACHE_DIR = defaultCache;
-  }
-  try {
-    fs.mkdirSync(process.env.PUPPETEER_CACHE_DIR, { recursive: true });
-  } catch (_) {}
-})();
+// Use Puppeteer's default cache directory and installation metadata.
 
 const PORT = process.env.PORT || 3000;
 const app = express();
